@@ -15,6 +15,17 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100" Radius="100" SegmentColor="#FF5A5A" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="90" SegmentColor="#FFA25A" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="80" SegmentColor="#F9FF5A" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="70" SegmentColor="#8AFF5A" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="60" SegmentColor="#5AFFB7" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="50" SegmentColor="#5AFFFB" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="40" SegmentColor="#5A85FF" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="30" SegmentColor="#B58BFE" Bounce="True" StrokeThickness="10" />
+                <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="20" SegmentColor="#FFA2ED" Bounce="True" StrokeThickness="10" />
+            </Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                 <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100" Radius="100" SegmentColor="#FF5A5A"   StrokeThickness="10" />
                 <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="90" SegmentColor="#FFA25A"   StrokeThickness="10" />
                 <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="100"  Radius="80" SegmentColor="#F9FF5A"   StrokeThickness="10" />

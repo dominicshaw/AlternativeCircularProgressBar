@@ -41,13 +41,43 @@ namespace DesignInControl
             _animationTimer.Tick -= HandleAnimationTick;
         }
 
+        private string _direction = "down";
+
         private void HandleAnimationTick(object sender, EventArgs e)
         {
-            Percentage = Percentage + 1;
-            if (Percentage > 100)
-                Percentage = 0;
+            if (Bounce)
+            {
+                if (_direction == "up")
+                {
+                    Percentage = Percentage + 1;
+
+                    if (Percentage > 100)
+                    {
+                        _direction = "down";
+                        Percentage = 100;
+                    }
+                }
+                else
+                {
+                    Percentage = Percentage - 1;
+
+                    if (Percentage < 0)
+                    {
+                        _direction = "up";
+                        Percentage = 0;
+                    }
+                }
+            }
+            else
+            {
+                Percentage = Percentage + 1;
+
+                if (Percentage > 100)
+                    Percentage = -1;
+            }
         }
 
+        public bool Bounce         { get { return (bool)   GetValue(BounceProperty);          } set { SetValue(BounceProperty,          value); } }
         public bool ChangeCursor   { get { return (bool)   GetValue(ChangeCursorProperty);    } set { SetValue(ChangeCursorProperty,    value); } }
         public int Radius          { get { return (int)    GetValue(RadiusProperty);          } set { SetValue(RadiusProperty,          value); } }
         public Brush SegmentColor  { get { return (Brush)  GetValue(SegmentColorProperty);    } set { SetValue(SegmentColorProperty,    value); } }
@@ -55,6 +85,7 @@ namespace DesignInControl
         public double Percentage   { get { return (double) GetValue(PercentageProperty);      } set { SetValue(PercentageProperty,      value); } }
         public double Angle        { get { return (double) GetValue(AngleProperty);           } set { SetValue(AngleProperty,           value); } }
 
+        public static readonly DependencyProperty BounceProperty          = DependencyProperty.Register("Bounce",          typeof (bool),   typeof (CircularProgressBar), new PropertyMetadata(false));
         public static readonly DependencyProperty ChangeCursorProperty    = DependencyProperty.Register("ChangeCursor",    typeof (bool),   typeof (CircularProgressBar), new PropertyMetadata(false));
         public static readonly DependencyProperty PercentageProperty      = DependencyProperty.Register("Percentage",      typeof (double), typeof (CircularProgressBar), new PropertyMetadata(65d, OnPercentageChanged));
         public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register("StrokeThickness", typeof (int),    typeof (CircularProgressBar), new PropertyMetadata(5));
